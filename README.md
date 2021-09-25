@@ -1,7 +1,9 @@
 INTRODUÇÃO
-A minha proposta de trabalho final da disciplina tem como objetivo desenvolver uma aplicação que simule a operação de um sistema embarcado em um semáforo rodoviário inteligente, bem como seu sistema de controle. O semáforo inteligente trabalha coletando dados de sensores como sensor de luminosidade e sensor contador de tráfego. O semáforo periodicamente realiza as tarefas de leitura dos sensores, preparação e envio dos dados pela rede, e esses dados são recebidos numa central de controle, onde o usuário pode controlar alguns parâmetros como o tempo de abertura do semáforo, assim como encerrar a conexão.
+
+Muitas vezes, em semáforos convencionais há desperdício de energia ao deixar a iluminação muito forte à noite, além de produzir ofuscamento em dias chuvosos ou nublados, ao mesmo tempo pode haver falta de iluminação em dias ensolarados. Para isso, foi implementado um controle inteligente de iluminação, baseado nos dados obtidos em experimentos práticos que realizei com LDR foi especificada a tabela proposta no trabalho, e foram estabelecidos nove níveis de iluminação, variando o brilho de 10% a 100%, visto que o semáforo nunca pode ficar desligado, e também na execução do código abaixo, onde pode-se observar que o brilho do semáforo é ajustado automaticamente, dependendo da medição do LDR, o que faz com que o semáforo tenha seu brilho controlado digitalmente de forma autônoma. O semáforo inteligente trabalha coletando dados de sensores como sensor de luminosidade e sensor contador de tráfego. O semáforo periodicamente realiza as tarefas de leitura dos sensores, preparação e envio dos dados pela rede, e esses dados são recebidos numa central de controle, onde o usuário pode controlar alguns parâmetros como o tempo de abertura do semáforo, assim como encerrar a conexão.
 
 SENSORES
+
 Para o projeto de sinaleira inteligente utilizarei essencialmente dois sensores, um de luminosidade, que pode ser um LDR, por exemplo. Para o sensor de tráfego podem ser feitas diversas soluções, por exemplo utilizar um sensor de distância a laser, ultrassom, e quando um veículo passa embaixo do semáforo, quando houver alteração de distância medida relevante será contabilizado como um veículo.
 
 ● Sensor de luminosidade
@@ -23,6 +25,7 @@ Nível Valor Condição da medição
 
 
 COMANDOS
+
 O projeto permite que sejam enviados comandos da interface de controle para o cliente, esses comandos permitem com que os parâmetros do semáforo sejam alterados manualmente, como tempo de abertura do semáforo, e a opção de encerrar a comunicação.
 
 ● Alterar tempo de abertura do semáforo
@@ -38,6 +41,7 @@ SAIR Encerra a comunicação com o servidor/simulador
 
 
 FUNÇÕES
+
 O cliente irá executar quatro tarefas periódicas, sendo a leitura dos sensores de luminosidade e tráfego, ajuste do brilho do semáforo com base na incidência de luz recebida pelo sensor, ajuste da abertura do semáforo de acordo com o tempo escolhido manualmente ou definido de acordo com o fluxo de tráfego no momento recebido pelo sensor, e exibição do status dos dados na tela no período definido.
 
 Abaixo encontram-se as funções do servidor e suas finalidades:
@@ -59,5 +63,3 @@ Função que reúne os dados das threads e exibe na tela.
 ESCOPO DO SERVIDOR/SIMULADOR:
 ESCOPO DO CLIENTE / MONITOR:
 Código baseado no exemplo disponibilizado em aula
-EXECUÇÃO
-Muitas vezes, em semáforos convencionais há desperdício de energia ao deixar a iluminação muito forte à noite, além de produzir ofuscamento em dias chuvosos ou nublados, ao mesmo tempo pode haver falta de iluminação em dias ensolarados. Para isso, foi implementado um controle inteligente de iluminação, baseado nos dados obtidos em experimentos práticos que realizei com LDR foi especificada a tabela proposta no trabalho, e foram estabelecidos nove níveis de iluminação, variando o brilho de 10% a 100%, visto que o semáforo nunca pode ficar desligado, o que pode ser visto na tabela 1, e também na execução do código abaixo, onde pode-se observar que o brilho do semáforo é ajustado automaticamente, dependendo da medição do LDR, o que faz com que o semáforo tenha seu brilho controlado digitalmente de forma autônoma.
